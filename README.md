@@ -1,29 +1,31 @@
 # Thor::Levenshtein
-
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'thor-levenshtein'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install thor-levenshtein
+[![Build Status](https://travis-ci.org/jimjh/thor-levenshtein.png?branch=master)](https://travis-ci.org/jimjh/thor-levenshtein)
 
 ## Usage
+To use, just add `thor-levenshtein` to your Gemfile and require it as follows:
 
-TODO: Write usage instructions here
+```ruby
+require 'thor/levenshtein'
 
-## Contributing
+class A < Thor
+  desc "describe NAME", "say that someone is amazing"
+  method_options :forcefully => :boolean
+  def describe(name, opts)
+    ret = "#{name} is amazing"
+    puts opts["forcefully"] ? ret.upcase : ret
+  end
+  desc 'protect', 'declare loyalty to Asgard'
+  def protect(name, opts)
+    puts 'I live to protect Asgard.'
+  end
+end
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+#### Output
+```sh
+$> ./a.rb dscribe
+Could not find task "dscribe".
+
+Did you mean this?
+        describe
+```
