@@ -1,19 +1,28 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'thor-levenshtein/version'
+require './lib/thor/levenshtein/version'
 
 Gem::Specification.new do |gem|
+
+  # NAME
   gem.name          = "thor-levenshtein"
   gem.version       = Thor::Levenshtein::VERSION
+  gem.platform      = Gem::Platform::RUBY
+  gem.required_ruby_version = '>= 1.9.2'
+
+  # LICENSES
+  gem.license       = 'MIT'
   gem.authors       = ["Jiunn Haur Lim"]
   gem.email         = ["codex.is.poetry@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.summary       = %q{Thor with auto-suggest}
+  gem.description   = %q{Thor that suggest possible commands when you make a typo.}
+  gem.homepage      = "https://github.com/jimjh/thor-levenshtein"
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+  # PATHS
+  gem.require_paths = %w[lib]
+  gem.files         = %w[LICENSE README.md] + Dir.glob('lib/**/*')
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
-  gem.require_paths = ["lib"]
+  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
+
+  gem.add_dependency 'levenshtein', '~> 0.2.2'
+
 end

@@ -1,4 +1,4 @@
-module Thor
+class Thor
   module Levenshtein
     VERSION = "0.0.1"
   end
