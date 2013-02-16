@@ -5,6 +5,7 @@
 To use, just add `thor-levenshtein` to your Gemfile and require it as follows:
 
 ```ruby
+require 'thor'
 require 'thor/levenshtein'
 
 class A < Thor
