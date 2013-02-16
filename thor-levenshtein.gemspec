@@ -23,7 +23,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
 
-  gem.add_dependency 'thor', '~> 0.16.0'
+  gem.add_dependency 'thor', '~> 0.17.0'
   gem.add_dependency 'levenshtein', '~> 0.2.2'
   gem.add_development_dependency 'rake',  '~> 10.0.3'
   gem.add_development_dependency 'rspec', '~> 2.12.0'
