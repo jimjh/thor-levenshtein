@@ -1,4 +1,6 @@
 # Thor::Levenshtein
+[![Dependency Status](https://gemnasium.com/jimjh/thor-levenshtein.png)](https://gemnasium.com/jimjh/thor-levenshtein)
+[![Code Climate](https://codeclimate.com/github/jimjh/thor-levenshtein.png)](https://codeclimate.com/github/jimjh/thor-levenshtein)
 [![Build Status](https://travis-ci.org/jimjh/thor-levenshtein.png?branch=master)](https://travis-ci.org/jimjh/thor-levenshtein)
 
 ## Usage
